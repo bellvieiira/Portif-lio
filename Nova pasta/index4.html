@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #2a0a14;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      background-image:
+        radial-gradient(ellipse 45% 40% at 90% 10%, rgba(123, 30, 58, 0.65) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 35% at 75% 30%, rgba(181, 72, 106, 0.45) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 5% 95%, rgba(123, 30, 58, 0.55) 0%, transparent 70%),
+        radial-gradient(ellipse 35% 35% at 0% 60%, rgba(232, 196, 208, 0.7) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 55% 50%, rgba(232, 196, 208, 0.5) 0%, transparent 70%);
+      background-attachment: fixed;
+    }
+
+    .perfil {
+      width: 100%;
+      max-width: 495px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .escondido {
+      display: none;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #5a0f26;
+      margin-bottom: 14px;
+    }
+
+    .nome {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .cargo {
+      font-size: 16px;
+      margin-bottom: 48px;
+    }
+
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .botao {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #2a0a14;
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.55);
+      border: 1px solid #7b1e3a;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .botao:hover {
+      background-color: #7b1e3a;
+      color: white;
+    }
+
+    .redes {
+      margin-top: 48px;
+      display: flex;
+      gap: 32px;
+    }
+
+    .redes a {
+      color: #5a0f26;
+      font-size: 26px;
+      transition: 0.3s;
+    }
+
+    .redes a:hover {
+      color: #b5486a;
+    }
+
+    #sobre {
+      max-width: 720px;
+    }
+
+    #sobre .cargo {
+      margin-bottom: 24px;
+    }
+
+    .texto {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    #sobre .redes {
+      margin-top: 32px;
+    }
+
+    .voltar {
+      max-width: 495px;
+      margin-top: 40px;
+    }
+
+    #projetos {
+      max-width: 832px;
+    }
+
+    #projetos .cargo {
+      margin-bottom: 32px;
+    }
+
+    #projetos .redes {
+      margin-top: 32px;
+    }
+
+    .cards {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px;
+      text-align: left;
+      background-color: rgba(255, 255, 255, 0.45);
+      border: 1px solid #7b1e3a;
+      border-radius: 8px;
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .card a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2a0a14;
+    }
+
+    .card a:hover {
+      color: #b5486a;
+    }
+
+    @media (max-width: 640px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .perfil {
+        padding: 16px;
+      }
+
+      .cargo {
+        margin-bottom: 32px;
+      }
+
+      .redes {
+        margin-top: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="perfil" id="inicio">
+    <img class="avatar" src="isabelle.jpeg" alt="Minha foto">
+    <h1 class="nome">Isabelle Vieira</h1>
+    <p class="cargo">Desenvolvedora Front-end no Programa Trilhas</p>
+
+    <div class="links">
+      <a class="botao" href="#" onclick="mostrar('sobre'); return false;">Sobre mim</a>
+      <a class="botao" href="#" onclick="mostrar('projetos'); return false;">Veja meus projetos</a>
+      <a class="botao" href="https://drive.google.com/drive/folders/1qddL5670cj9cNiXSPwkUB_hsBrt_vmd2?usp=drive_link" target="_blank">Acesse os meus certificados</a>
+    </div>
+
+    <div class="redes">
+      <a href="https://github.com/bellvieiira" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/seu-usuario" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </main>
+
+  <main class="perfil escondido" id="sobre">
+    <img class="avatar" src="isabelle.jpeg" alt="Minha foto">
+    <h1 class="nome">Isabelle Vieira</h1>
+    <p class="cargo">Desenvolvedora Front-end no Programa Trilhas</p>
+
+    <p class="texto">
+      Me chamo Isabelle Vieira da Silva e sou estudante do IEMA, onde faço o curso técnico em Desenvolvimento de Sistemas. Durante minha trajetória acadêmica, venho participando ativamente de diversos projetos práticos, utilizando principalmente a ferramenta Construct para a criação e lógica de jogos digitais. Além disso, adquiri experiência com as linguagens Java e Node.js em aulas e rotinas práticas no laboratório de informática.
+      <br><br>
+      Sou entusiasta do programa Trilhas e de toda a área da tecnologia, mas meu principal objetivo futuro é cursar Direito, unindo minha base prática em TI ao universo jurídico. Tenho grande interesse no Direito Tecnológico, com foco em temas como a LGPD (Lei Geral de Proteção de Dados) e a governança de dados no ambiente digital.
+    </p>
+
+    <div class="redes">
+      <a href="https://github.com/seu-usuario" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/seu-usuario" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+    <a class="botao voltar" href="#" onclick="mostrar('inicio'); return false;">Voltar</a>
+  </main>
+
+  <main class="perfil escondido" id="projetos">
+    <img class="avatar" src="isabelle.jpeg" alt="Minha foto">
+    <h1 class="nome">Isabelle Vieira</h1>
+    <p class="cargo">Desenvolvedora Front-end no Programa Trilhas</p>
+
+    <div class="cards">
+      <div class="card">
+        <img src="projeto1.jpeg" alt="Projeto 1">
+        <a href="https://github.com/bellvieiira/Modulo-02" target="_blank">Acessar projeto →</a>
+      </div>
+
+      <div class="card">
+        <img src="projeto2.png" alt="Projeto 2">
+        <a href="https://drive.google.com/file/d/1U2I4PCwTgtyH8fiepIjar8v_JG_9RNNE/view?usp=sharing" target="_blank">Acessar projeto →</a>
+      </div>
+
+      <div class="card">
+        <img src="projeto3.png" alt="Projeto 3">
+        <a href="https://youtu.be/eQXYnzmvpws?feature=shared" target="_blank">Acessar projeto →</a>
+      </div>
+    </div>
+
+    <div class="redes">
+      <a href="https://github.com/bellvieiira" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="www.linkedin.com/in/isabelle-vieira-a09254419 " target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+    <a class="botao voltar" href="#" onclick="mostrar('inicio'); return false;">Voltar</a>
+  </main>
+
+  <script>
+    function mostrar(pagina) {
+      document.getElementById('inicio').classList.add('escondido');
+      document.getElementById('sobre').classList.add('escondido');
+      document.getElementById('projetos').classList.add('escondido');
+
+      document.getElementById(pagina).classList.remove('escondido');
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+</body>
+</html>
